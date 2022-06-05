@@ -16,7 +16,7 @@ export class PostsService {
   }
 
   async find(): Promise<Post[]> {
-    const posts = await this.postsRepository.find({relations:['comments'], order:{ id: 'DESC' }});
+    const posts = await this.postsRepository.find();
     return posts;
   }
 

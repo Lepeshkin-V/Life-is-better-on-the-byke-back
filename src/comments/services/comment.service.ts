@@ -27,7 +27,7 @@ export class CommentsService {
       throw new Error('Это не ваш комментарий');
     }
     const comment = await this.commentsRepository.save({ ...updatedComment, id: commentId });
-    return this.commentsRepository.findOne({ where: { id: comment.id }, relations: ['user'] });
+    return this.commentsRepository.findOne({ where: { id: comment.id }, relations: ['user']});
   }
 
   async delete(commentId: string, userId: string): Promise<boolean> {
